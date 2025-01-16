@@ -15,7 +15,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 vim.wo.relativenumber=true
-
+vim.api.nvim_set_keymap('i', '(', '()<Left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '[', '[]<Left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '{', '{}<Left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '\'', '\'\'<Left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '"', '""<Left>', { noremap = true })
 require("vim-options")
 require("lazy").setup("plugins")
 
