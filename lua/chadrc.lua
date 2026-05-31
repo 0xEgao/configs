@@ -6,8 +6,8 @@
 local M = {}
 
 M.base46 = {
-	theme = "gruvbox",
-	theme_toggle = { "gruvbox", "one_light" },
+	theme = "carbonfox",
+	theme_toggle = { "carbonfox", "one_light" },
 
 	hl_override = {
 		Comment = { fg = "#7dd3fc", italic = true },
@@ -16,8 +16,16 @@ M.base46 = {
 		LineNr = { fg = "#6f6f6f" },
 		CursorLineNr = { fg = "#ffffff", bold = true },
 		WinSeparator = { fg = "#303030" },
-		ColorColumn = { bg = "#202020" },
+		NormalFloat = { bg = "#202020" },
+		FloatBorder = { fg = "#7dd3fc", bg = "#202020" },
+		DiagnosticVirtualLinesError = { fg = "#ff6b8a", bg = "#241f22" },
+		DiagnosticVirtualLinesWarn = { fg = "#f5c542", bg = "#242216" },
+		DiagnosticVirtualLinesInfo = { fg = "#7dd3fc", bg = "#182126" },
+		DiagnosticVirtualLinesHint = { fg = "#8bd5ca", bg = "#162321" },
 		LspInlayHint = { fg = "#9a9a9a", bg = "#202020", italic = true },
+		NvimTreeNormal = { bg = "#202020" },
+		NvimTreeNormalNC = { bg = "#202020" },
+		NvimTreeWinSeparator = { fg = "#303030", bg = "#202020" },
 	},
 }
 

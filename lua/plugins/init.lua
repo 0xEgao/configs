@@ -9,6 +9,47 @@ return {
     },
   },
   {
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    opts = {
+      cursor = { enable = true },
+      scroll = { enable = true },
+      resize = { enable = true },
+      open = { enable = true },
+      close = { enable = true },
+    },
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    opts = require "configs.trouble",
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-neotest/nvim-nio",
+      "mrcjkb/rustaceanvim",
+    },
+    ft = { "rust" },
+    opts = function()
+      return require "configs.neotest"
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      {
+        "rcarriga/nvim-dap-ui",
+        dependencies = { "nvim-neotest/nvim-nio" },
+      },
+      "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      require("configs.dap").setup()
+    end,
+  },
+  {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
