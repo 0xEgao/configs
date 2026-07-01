@@ -13,7 +13,7 @@ return {
     event = "VeryLazy",
     opts = {
       cursor = { enable = true },
-      scroll = { enable = true },
+      scroll = { enable = false },
       resize = { enable = true },
       open = { enable = true },
       close = { enable = true },
