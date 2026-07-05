@@ -19,7 +19,6 @@ o.colorcolumn = ""
 o.laststatus = 3
 o.showmode = false
 o.list = true
-opt.mousescroll = { ver = 3, hor = 6 }
 opt.listchars = { tab = "^ ", nbsp = "¬", extends = "»", precedes = "«", trail = "•" }
 opt.diffopt:append { "iwhite", "algorithm:histogram", "indent-heuristic" }
 opt.fillchars = {
@@ -40,10 +39,19 @@ opt.fillchars = {
 }
 
 vim.diagnostic.config {
-  virtual_text = false,
-  virtual_lines = {
-    current_line = true,
+  virtual_text = {
+    spacing = 3,
+    prefix = "●",
+    source = "if_many",
+    format = function(diagnostic)
+      local message = diagnostic.message:gsub("%s+", " ")
+      if #message > 110 then
+        message = message:sub(1, 107) .. "..."
+      end
+      return message
+    end,
   },
+  virtual_lines = false,
   severity_sort = true,
   signs = {
     text = {
